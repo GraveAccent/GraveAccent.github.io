@@ -4,7 +4,7 @@
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>flv.js demo</title>
-    <link rel="stylesheet" type="text/css" href="./css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css" />
 </head>
 
 <body>
@@ -14,10 +14,7 @@
             <div id="streamURL">
                 <div class="url-input">
                     <label for="sURL">Stream URL:</label>
-                    <!--   value="https://res.cloudinary.com/dbyd52b32/video/upload/v1524300608/bbb.flv" -->
-                    <input id="sURL" type="text"
-                        value="http://193.112.66.224:7001/live/movie.flv"
-                    />
+                    <input id="sURL" type="text" value="http://127.0.0.1/flv/7182741-1.flv" />
                     <button onclick="switch_mds()">Switch to MediaDataSource</button>
                 </div>
                 <div class="options">
@@ -56,9 +53,9 @@
         </div>
         <textarea name="logcatbox" class="logcatBox" rows="10" readonly></textarea>
     </div>
-    <script src="./flv.js"></script>
-    <!--<script
-        src="https://cdn.bootcss.com/flv.js/1.4.2/flv.min.js"></script>-->
+
+    <script src="./dist/flv.js"></script>
+
     <script>
         var checkBoxFields = ['isLive', 'withCredentials', 'hasAudio', 'hasVideo'];
         var streamURL, mediaSourceURL;
@@ -67,7 +64,7 @@
             console.log('isSupported: ' + flvjs.isSupported());
             if (mediaSourceURL.className === '') {
                 var url = document.getElementById('msURL').value;
-    
+
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', url, true);
                 xhr.onload = function (e) {
@@ -221,7 +218,7 @@
             flv_load();
         });
     </script>
-    
+
 </body>
 
 </html>
