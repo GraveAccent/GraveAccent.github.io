@@ -488,9 +488,9 @@
 <p>undefined</p>
 <p>> Object.keys(a).filter((k) =&gt; a[k])</p>
 <p>[ ‘b’, ‘c’, ‘d’ ]</p>
-<p>> const a = {‘a’: 1, ‘b’: 2, ‘c’: 3, ‘d’: 4}</p>
+<p>> const b = {‘a’: 1, ‘b’: 2, ‘c’: 3, ‘d’: 4}</p>
 <p>undefined</p>
-<p>> Object.keys(a).filter((k) =&gt; a[k])</p>
+<p>> Object.keys(b).filter((k) =&gt; a[k])</p>
 <p>[‘a’, ‘b’, ‘c’, ‘d’ ]</p>
 </blockquote>
 <p>以上是我在nodejs的REPL里的输入和其返回值,注意，键对应的值如果是falsy，那么这个键在经过这种过滤以后就会消失，这种编程范例可以消除一个Object里的falsy值，如空字符串、0、null和undefined。</p>
