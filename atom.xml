@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Grave Accent&#39;s blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://graveaccent.me/"/>
+  <updated>2019-03-13T08:52:49.616Z</updated>
+  <id>https://graveaccent.me/</id>
+  
+  <author>
+    <name>Grave Accent</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数学和程序设计语言中的函数</title>
+    <link href="https://graveaccent.me/2018/11/08/%E6%95%B0%E5%AD%A6%E5%92%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/"/>
+    <id>https://graveaccent.me/2018/11/08/数学和程序设计语言中的函数/</id>
+    <published>2018-11-08T12:27:24.000Z</published>
+    <updated>2019-03-13T08:52:49.616Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="数学中，函数的定义"><a href="#数学中，函数的定义" class="headerlink" title="数学中，函数的定义"></a>数学中，函数的定义</h2><p>在数学中，我们经常会用 <code>f(x) = y</code> 表示函数，意思是函数 <code>f</code> 取参数 <code>x</code>  并映射到值 <code>y</code>。在数学中，每个 <code>x</code> 都能且仅能映射到一个 <code>y</code>。在同一个函数中， <code>f(2) = 2,000,000</code>，那么它不能出现这种情况：<code>f(2) = 2,000,0001</code>。</p><h2 id="程序设计语言中，函数的定义"><a href="#程序设计语言中，函数的定义" class="headerlink" title="程序设计语言中，函数的定义"></a>程序设计语言中，函数的定义</h2><p>可是，对于很多程序设计语言，多次调用同一个函数 <code>f</code>，给定参数 <code>x</code>，值 <code>y</code> 有可能是不一样的。比如，一个函数可以读取外部变量的值，将外部变量的值加一后赋值到这个外部变量，最后返回的值是这个外部变量的新值。如果第一次调用该函数返回的值是1，第二次返回的值就是2。</p><p>可以把变量的值和函数返回值叫作 <code>state</code> 。因为 <code>state</code> 会变化，所以程序设计者会消耗大量精力追踪 <code>state</code> 的变化。这种程序设计方法存在很多缺点，所以出现了 <code>functional programming</code>，即函数式编程。</p><h2 id="什么是函数式编程"><a href="#什么是函数式编程" class="headerlink" title="什么是函数式编程"></a>什么是函数式编程</h2><p>它的基础是超越特定实现的抽象数学表示法。这指向了一种编程方法，即通过描述问题解决问题。通过专注于计算而不是计算机，函数式编程允许程序员使用有力的抽象，让许多具有挑战性的问题更容易解决。</p><p>有一些程序设计语言应用了函数式编程的基本原则，<code>Haskell</code> 是其中之一。在 <code>Haskell</code> 中，函数就像数学中的函数那样运作。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;数学中，函数的定义&quot;&gt;&lt;a href=&quot;#数学中，函数的定义&quot; class=&quot;headerlink&quot; title=&quot;数学中，函数的定义&quot;&gt;&lt;/a&gt;数学中，函数的定义&lt;/h2&gt;&lt;p&gt;在数学中，我们经常会用 &lt;code&gt;f(x) = y&lt;/code&gt; 表示函数，意思是
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Object.key和filter组合</title>
+    <link href="https://graveaccent.me/2018/07/22/Object-key%E5%92%8Cfilter%E7%BB%84%E5%90%88/"/>
+    <id>https://graveaccent.me/2018/07/22/Object-key和filter组合/</id>
+    <published>2018-07-22T08:17:03.000Z</published>
+    <updated>2018-07-22T08:35:31.828Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>> const a = {‘a’: 0, ‘b’: 1, ‘c’: 2, ‘d’: 3}</p><p>undefined</p><p>> Object.keys(a).filter((k) =&gt; a[k])</p><p>[ ‘b’, ‘c’, ‘d’ ]</p><p>> const b = {‘a’: 1, ‘b’: 2, ‘c’: 3, ‘d’: 4}</p><p>undefined</p><p>> Object.keys(b).filter((k) =&gt; a[k])</p><p>[‘a’, ‘b’, ‘c’, ‘d’ ]</p></blockquote><p>以上是我在nodejs的REPL里的输入和其返回值,注意，键对应的值如果是falsy，那么这个键在经过这种过滤以后就会消失，这种编程范例可以消除一个Object里的falsy值，如空字符串、0、null和undefined。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&gt; const a = {‘a’: 0, ‘b’: 1, ‘c’: 2, ‘d’: 3}&lt;/p&gt;
+&lt;p&gt;undefined&lt;/p&gt;
+&lt;p&gt;&gt; Object.keys(a).filter((k) =&amp;gt; a[k])&lt;/p&gt;
+&lt;p&gt;[ ‘b’, ‘
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript syntax Object" scheme="https://graveaccent.me/tags/JavaScript-syntax-Object/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>card_js</title>
+    <link href="https://graveaccent.me/2018/05/24/card-js/"/>
+    <id>https://graveaccent.me/2018/05/24/card-js/</id>
+    <published>2018-05-24T14:29:52.000Z</published>
+    <updated>2019-03-13T10:08:26.903Z</updated>
+    
+    <content type="html"><![CDATA[<p>源码在<a href="https://codepen.io/K-T/pen/dWBzZM" target="_blank" rel="noopener">这里</a><br>效果在<a href="/codepen/card_js">这里</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;源码在&lt;a href=&quot;https://codepen.io/K-T/pen/dWBzZM&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;&lt;br&gt;效果在&lt;a href=&quot;/codepen/card_js&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="codepen" scheme="https://graveaccent.me/tags/codepen/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gallery</title>
+    <link href="https://graveaccent.me/2018/05/20/gallery/"/>
+    <id>https://graveaccent.me/2018/05/20/gallery/</id>
+    <published>2018-05-19T17:10:42.000Z</published>
+    <updated>2018-05-19T17:11:50.544Z</updated>
+    
+    <content type="html"><![CDATA[<p>gallery在这里:<br><a href="/gallery">gallery</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;gallery在这里:&lt;br&gt;&lt;a href=&quot;/gallery&quot;&gt;gallery&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>music</title>
+    <link href="https://graveaccent.me/2018/05/19/music/"/>
+    <id>https://graveaccent.me/2018/05/19/music/</id>
+    <published>2018-05-19T11:14:33.000Z</published>
+    <updated>2018-05-19T11:15:59.779Z</updated>
+    
+    <content type="html"><![CDATA[<p>链接在这里:<br><a href="/music">music</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;链接在这里:&lt;br&gt;&lt;a href=&quot;/music&quot;&gt;music&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Perceptron</title>
+    <link href="https://graveaccent.me/2018/05/18/Perceptron/"/>
+    <id>https://graveaccent.me/2018/05/18/Perceptron/</id>
+    <published>2018-05-18T11:19:01.000Z</published>
+    <updated>2018-05-19T11:20:30.349Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="机器学习系列-设计一个感知机-Perceptron-分类算法"><a href="#机器学习系列-设计一个感知机-Perceptron-分类算法" class="headerlink" title="机器学习系列:设计一个感知机(Perceptron)分类算法"></a>机器学习系列:设计一个感知机(Perceptron)分类算法</h1><p>把<a href="https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781783555130/2/ch02lvl1sec15/implementing-a-perceptron-learning-algorithm-in-python" target="_blank" rel="noopener">这个代码</a>改(汉化简化)了一下<br>用到的csv数据文件<a href="/ml/Perceptron/iris.data.csv">在这里</a><br>ipynb转html的效果<a href="/ml/Perceptron">在这里</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;机器学习系列-设计一个感知机-Perceptron-分类算法&quot;&gt;&lt;a href=&quot;#机器学习系列-设计一个感知机-Perceptron-分类算法&quot; class=&quot;headerlink&quot; title=&quot;机器学习系列:设计一个感知机(Perceptron)分类算法&quot;&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>First PyTorch neural network</title>
+    <link href="https://graveaccent.me/2018/05/18/first_PyTorch-neural-network/"/>
+    <id>https://graveaccent.me/2018/05/18/first_PyTorch-neural-network/</id>
+    <published>2018-05-18T11:19:01.000Z</published>
+    <updated>2018-11-08T13:15:23.063Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="First-PyTorch-neural-network"><a href="#First-PyTorch-neural-network" class="headerlink" title="First PyTorch neural network"></a>First PyTorch neural network</h1><p>用到的csv数据文件<a href="https://archive.ics.uci.edu/ml/datasets/Iris" target="_blank" rel="noopener">在这里</a><br>ipynb转html的效果<a href="/pytorch/2.training.your.first.neural.network.html">在这里</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;First-PyTorch-neural-network&quot;&gt;&lt;a href=&quot;#First-PyTorch-neural-network&quot; class=&quot;headerlink&quot; title=&quot;First PyTorch neural network&quot;&gt;&lt;/a&gt;Fi
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>video</title>
+    <link href="https://graveaccent.me/2018/05/14/video/"/>
+    <id>https://graveaccent.me/2018/05/14/video/</id>
+    <published>2018-05-14T14:37:10.000Z</published>
+    <updated>2018-05-14T14:42:58.744Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://graveaccent.me/video.html">一个在网页中插入视频的demo</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://graveaccent.me/video.html&quot;&gt;一个在网页中插入视频的demo&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>how-to-swich-key-when-use-git-push</title>
+    <link href="https://graveaccent.me/2018/05/14/how-to-swich-key-when-use-git-push/"/>
+    <id>https://graveaccent.me/2018/05/14/how-to-swich-key-when-use-git-push/</id>
+    <published>2018-05-14T13:06:45.000Z</published>
+    <updated>2018-05-14T13:25:28.104Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如何在使用git-push的时候切换key"><a href="#如何在使用git-push的时候切换key" class="headerlink" title="如何在使用git push的时候切换key"></a>如何在使用<code>git push</code>的时候切换<code>key</code></h1><hr><p>有时候<code>.ssh</code>文件夹里会有不止一个<code>private key</code>(默认名字一般是<code>id_rsa</code>)，比如公司项目一个<code>key</code>，自己一个<code>key</code>。如果在使用 <code>git push</code> 的时候，<code>private key</code>和项目不对应，就会<code>push</code>失败，那么如何切换<code>key</code>呢？<br>假设默认正在使用的<code>key</code>是<code>~/.ssh/id_rsa</code>，你想把私钥切换成<code>~/.ssh/the_graveac_rsa</code>。<br>首先，新建一个文件<code>~/.ssh/config</code>。然后编辑内容如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">IdentityFile ~/.ssh/thegraveac_rsa</span><br><span class="line">User GraveAccent</span><br></pre></td></tr></table></figure><p><code>User</code> 那一行也可以不填<br>保存退出以后，再使用<code>git push</code>，就会使用<code>the_graveac_rsa</code>这个私钥了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;如何在使用git-push的时候切换key&quot;&gt;&lt;a href=&quot;#如何在使用git-push的时候切换key&quot; class=&quot;headerlink&quot; title=&quot;如何在使用git push的时候切换key&quot;&gt;&lt;/a&gt;如何在使用&lt;code&gt;git push&lt;/co
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://graveaccent.me/2018/05/14/hello-world/"/>
+    <id>https://graveaccent.me/2018/05/14/hello-world/</id>
+    <published>2018-05-14T11:35:28.023Z</published>
+    <updated>2018-05-14T11:35:28.023Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
